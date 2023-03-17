@@ -6,17 +6,17 @@ class MainScreenIoRepoository implements IIoRepository {
   final IIoService ioService;
 
   MainScreenIoRepoository(this.ioService);
-  Stream<dynamic>? rChannel;
+  Stream<dynamic>? channel;
 
   @override
   MainScreenEntity start() {
     try {
       ioService.init();
-      rChannel = ioService.pull();
+      channel = ioService.pull();
     } catch (e) {
       rethrow;
     }
-    return MainScreenEntity(channel: rChannel);
+    return MainScreenEntity(channel: channel);
   }
 
   @override
@@ -26,14 +26,14 @@ class MainScreenIoRepoository implements IIoRepository {
     } catch (e) {
       rethrow;
     }
-    return MainScreenEntity(channel: rChannel);
+    return MainScreenEntity(channel: channel);
   }
 
   @override
   MainScreenEntity stop() {
     try {
       ioService.stop();
-      rChannel = ioService.pull();
+      channel = ioService.pull();
     } catch (e) {
       rethrow;
     }

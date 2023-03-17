@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kpi_drive_task/domain/constans/app_constants.dart';
+import 'package:kpi_drive_task/domain/constants/app_constants.dart';
 import 'package:kpi_drive_task/ui/table/table_cell_widget.dart';
 
 class TableWidget extends StatefulWidget {
@@ -16,21 +16,19 @@ class _TableWidgetState extends State<TableWidget> {
   @override
   Widget build(BuildContext context) {
     int cellNumber = -1;
-
     return Table(
       border: TableBorder.all(),
       defaultVerticalAlignment: TableCellVerticalAlignment.middle,
       children: List.generate(
-        AppConstans.ui.rowsNumber,
+        AppConstants.ui.rowsNumber,
         (rowIndex) => TableRow(
           children: List.generate(
-            AppConstans.ui.columnsNumber,
+            AppConstants.ui.columnsNumber,
             (cellIndex) {
               cellNumber++;
               return TableCellWidget(
                   controller: widget.tableControllers[cellNumber]
-                    ..text = widget.data,
-                  cellNumber: cellNumber);
+                    ..text = widget.data);
             },
           ),
         ),

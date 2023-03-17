@@ -3,7 +3,7 @@ import 'package:bloc/bloc.dart';
 import 'package:bloc_concurrency/bloc_concurrency.dart' as bloc_concurrency;
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:kpi_drive_task/domain/constans/app_constants.dart';
+import 'package:kpi_drive_task/domain/constants/app_constants.dart';
 import 'package:kpi_drive_task/domain/repositories/i_io_repository.dart';
 
 import 'main_screen_entity.dart';
@@ -88,7 +88,7 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
     try {
       emit(MainScreenState.processing(data: state.data));
       final newData = await _repository.start();
-      await Future.delayed(AppConstans.net.demoDelay);
+      await Future.delayed(AppConstants.net.demoDelay);
       emit(MainScreenState.listening(data: newData));
     } on Object catch (err, stackTrace) {
       debugPrint('Произошла ошибка в MainScreenBLoC: $err, $stackTrace');
@@ -103,7 +103,7 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
     try {
       emit(MainScreenState.processing(data: state.data));
       final newData = await _repository.push(event.data);
-      await Future.delayed(AppConstans.net.demoDelay);
+      await Future.delayed(AppConstants.net.demoDelay);
       emit(MainScreenState.listening(data: newData));
     } on Object catch (err, stackTrace) {
       debugPrint('Произошла ошибка в MainScreenBLoC: $err, $stackTrace');
@@ -118,7 +118,7 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
     try {
       emit(MainScreenState.processing(data: state.data));
       final newData = await _repository.stop();
-      await Future.delayed(AppConstans.net.demoDelay);
+      await Future.delayed(AppConstants.net.demoDelay);
       emit(MainScreenState.idle(data: newData));
     } on Object catch (err, stackTrace) {
       debugPrint('Произошла ошибка в MainScreenBLoC: $err, $stackTrace');

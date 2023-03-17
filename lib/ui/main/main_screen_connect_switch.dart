@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:kpi_drive_task/domain/bloc/main_screen_bloc.dart';
-import 'package:kpi_drive_task/domain/constans/app_constants.dart';
+import 'package:kpi_drive_task/domain/constants/app_constants.dart';
 
 class MainScreenConnectSwitch extends StatefulWidget {
   const MainScreenConnectSwitch({super.key});
@@ -16,8 +16,8 @@ class _MainScreenConnectSwitchState extends State<MainScreenConnectSwitch> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: AppConstans.ui.buttonSize,
-      width: AppConstans.ui.buttonSize,
+      height: AppConstants.ui.buttonSize,
+      width: AppConstants.ui.buttonSize,
       child: FittedBox(
         fit: BoxFit.fill,
         child: Switch(
