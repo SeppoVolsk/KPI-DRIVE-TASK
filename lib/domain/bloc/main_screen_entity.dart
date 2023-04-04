@@ -4,6 +4,5 @@ part 'main_screen_entity.freezed.dart';
 
 @freezed
 class MainScreenEntity with _$MainScreenEntity {
-  factory MainScreenEntity({String? data, Stream<dynamic>? channel}) =
-      _MainScreenEntity;
+  factory MainScreenEntity({dynamic data}) = _MainScreenEntity;
 }

@@ -16,8 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$MainScreenEntity {
-  String? get data => throw _privateConstructorUsedError;
-  Stream<dynamic>? get channel => throw _privateConstructorUsedError;
+  dynamic get data => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $MainScreenEntityCopyWith<MainScreenEntity> get copyWith =>
@@ -30,7 +29,7 @@ abstract class $MainScreenEntityCopyWith<$Res> {
           MainScreenEntity value, $Res Function(MainScreenEntity) then) =
       _$MainScreenEntityCopyWithImpl<$Res, MainScreenEntity>;
   @useResult
-  $Res call({String? data, Stream<dynamic>? channel});
+  $Res call({dynamic data});
 }
 
 /// @nodoc
@@ -47,17 +46,12 @@ class _$MainScreenEntityCopyWithImpl<$Res, $Val extends MainScreenEntity>
   @override
   $Res call({
     Object? data = freezed,
-    Object? channel = freezed,
   }) {
     return _then(_value.copyWith(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channel: freezed == channel
-          ? _value.channel
-          : channel // ignore: cast_nullable_to_non_nullable
-              as Stream<dynamic>?,
+              as dynamic,
     ) as $Val);
   }
 }
@@ -70,7 +64,7 @@ abstract class _$$_MainScreenEntityCopyWith<$Res>
       __$$_MainScreenEntityCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? data, Stream<dynamic>? channel});
+  $Res call({dynamic data});
 }
 
 /// @nodoc
@@ -85,17 +79,12 @@ class __$$_MainScreenEntityCopyWithImpl<$Res>
   @override
   $Res call({
     Object? data = freezed,
-    Object? channel = freezed,
   }) {
     return _then(_$_MainScreenEntity(
       data: freezed == data
           ? _value.data
           : data // ignore: cast_nullable_to_non_nullable
-              as String?,
-      channel: freezed == channel
-          ? _value.channel
-          : channel // ignore: cast_nullable_to_non_nullable
-              as Stream<dynamic>?,
+              as dynamic,
     ));
   }
 }
@@ -103,16 +92,14 @@ class __$$_MainScreenEntityCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_MainScreenEntity implements _MainScreenEntity {
-  _$_MainScreenEntity({this.data, this.channel});
+  _$_MainScreenEntity({this.data});
 
   @override
-  final String? data;
-  @override
-  final Stream<dynamic>? channel;
+  final dynamic data;
 
   @override
   String toString() {
-    return 'MainScreenEntity(data: $data, channel: $channel)';
+    return 'MainScreenEntity(data: $data)';
   }
 
   @override
@@ -120,12 +107,12 @@ class _$_MainScreenEntity implements _MainScreenEntity {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_MainScreenEntity &&
-            (identical(other.data, data) || other.data == data) &&
-            (identical(other.channel, channel) || other.channel == channel));
+            const DeepCollectionEquality().equals(other.data, data));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, data, channel);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(data));
 
   @JsonKey(ignore: true)
   @override
@@ -135,14 +122,10 @@ class _$_MainScreenEntity implements _MainScreenEntity {
 }
 
 abstract class _MainScreenEntity implements MainScreenEntity {
-  factory _MainScreenEntity(
-      {final String? data,
-      final Stream<dynamic>? channel}) = _$_MainScreenEntity;
+  factory _MainScreenEntity({final dynamic data}) = _$_MainScreenEntity;
 
   @override
-  String? get data;
-  @override
-  Stream<dynamic>? get channel;
+  dynamic get data;
   @override
   @JsonKey(ignore: true)
   _$$_MainScreenEntityCopyWith<_$_MainScreenEntity> get copyWith =>

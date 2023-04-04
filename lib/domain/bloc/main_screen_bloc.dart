@@ -24,6 +24,11 @@ class MainScreenEvent with _$MainScreenEvent {
 
   /// Закрыть соединение
   const factory MainScreenEvent.stop() = StopMainScreenEvent;
+
+  const factory MainScreenEvent.receive({required String? data}) =
+      ReceiveMainScreenEvent;
+
+  const factory MainScreenEvent.error(Object? error) = ErrorMainScreenEvent;
 }
 
 /* MainScreen States */
@@ -69,10 +74,11 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
         ) {
     on<MainScreenEvent>(
       (event, emit) => event.map<Future<void>>(
-        start: (event) => _start(event, emit),
-        push: (event) => _push(event, emit),
-        stop: (event) => _stop(event, emit),
-      ),
+          start: (event) => _start(event, emit),
+          push: (event) => _push(event, emit),
+          stop: (event) => _stop(event, emit),
+          receive: (event) => _receive(event, emit),
+          error: (event) => _error(event, emit)),
       //transformer: bloc_concurrency.sequential(),
       //transformer: bloc_concurrency.restartable(),
       transformer: bloc_concurrency.droppable(),
@@ -81,15 +87,25 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
   }
 
   final IIoRepository _repository;
+  Stream<dynamic>? wsStream;
+  StreamSubscription<dynamic>? wsSubscription;
 
   /// Обработчик события Start
   Future<void> _start(
       StartMainScreenEvent event, Emitter<MainScreenState> emit) async {
     try {
       emit(MainScreenState.processing(data: state.data));
-      final newData = await _repository.start();
+      wsStream ??= _repository.start();
+      wsSubscription ??= wsStream?.listen((data) {
+        debugPrint("WS DATA");
+        add(ReceiveMainScreenEvent(data: data));
+      }, onError: (error) {
+        debugPrint("WS ERROR");
+        add(MainScreenEvent.error(error));
+      }, cancelOnError: false);
+
       await Future.delayed(AppConstants.net.demoDelay);
-      emit(MainScreenState.listening(data: newData));
+      emit(MainScreenState.listening(data: MainScreenEntity()));
     } on Object catch (err, stackTrace) {
       debugPrint('Произошла ошибка в MainScreenBLoC: $err, $stackTrace');
       emit(MainScreenState.error(data: state.data, error: err));
@@ -125,5 +141,25 @@ class MainScreenBLoC extends Bloc<MainScreenEvent, MainScreenState>
       emit(MainScreenState.error(data: state.data, error: err));
       rethrow;
     }
+  }
+
+  Future<void> _receive(
+      ReceiveMainScreenEvent event, Emitter<MainScreenState> emit) async {
+    emit(MainScreenState.listening(
+      data: MainScreenEntity(data: event.data),
+    ));
+  }
+
+  Future<void> _error(
+      ErrorMainScreenEvent event, Emitter<MainScreenState> emit) async {
+    debugPrint('Произошла ошибка в MainScreenBLoC: ${event.error}');
+    emit(MainScreenState.error(
+        data: state.data, error: event.error ?? 'Unknown Error'));
+  }
+
+  @override
+  Future<void> close() {
+    wsSubscription?.cancel();
+    return super.close();
   }
 }

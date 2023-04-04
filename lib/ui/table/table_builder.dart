@@ -10,12 +10,9 @@ class TableBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<MainScreenBLoC, MainScreenState>(
-      builder: (context, state) => StreamBuilder(
-          stream: state.data.channel,
-          builder: ((context, snapshot) => TableWidget(
-                data: snapshot.data ?? "НЕТ ДАННЫХ",
-                tableControllers: tableControllers,
-              ))),
-    );
+        builder: (context, state) => TableWidget(
+              data: state.data.toString() ?? "НЕТ ДАННЫХ",
+              tableControllers: tableControllers,
+            ));
   }
 }

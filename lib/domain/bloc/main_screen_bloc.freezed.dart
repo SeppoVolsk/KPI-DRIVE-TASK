@@ -21,6 +21,8 @@ mixin _$MainScreenEvent {
     required TResult Function() start,
     required TResult Function(String? data) push,
     required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -28,6 +30,8 @@ mixin _$MainScreenEvent {
     TResult? Function()? start,
     TResult? Function(String? data)? push,
     TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -35,6 +39,8 @@ mixin _$MainScreenEvent {
     TResult Function()? start,
     TResult Function(String? data)? push,
     TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -43,6 +49,8 @@ mixin _$MainScreenEvent {
     required TResult Function(StartMainScreenEvent value) start,
     required TResult Function(PushMainScreenEvent value) push,
     required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,6 +58,8 @@ mixin _$MainScreenEvent {
     TResult? Function(StartMainScreenEvent value)? start,
     TResult? Function(PushMainScreenEvent value)? push,
     TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -57,6 +67,8 @@ mixin _$MainScreenEvent {
     TResult Function(StartMainScreenEvent value)? start,
     TResult Function(PushMainScreenEvent value)? push,
     TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -121,6 +133,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     required TResult Function() start,
     required TResult Function(String? data) push,
     required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
   }) {
     return start();
   }
@@ -131,6 +145,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     TResult? Function()? start,
     TResult? Function(String? data)? push,
     TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
   }) {
     return start?.call();
   }
@@ -141,6 +157,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     TResult Function()? start,
     TResult Function(String? data)? push,
     TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -155,6 +173,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     required TResult Function(StartMainScreenEvent value) start,
     required TResult Function(PushMainScreenEvent value) push,
     required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
   }) {
     return start(this);
   }
@@ -165,6 +185,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     TResult? Function(StartMainScreenEvent value)? start,
     TResult? Function(PushMainScreenEvent value)? push,
     TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
   }) {
     return start?.call(this);
   }
@@ -175,6 +197,8 @@ class _$StartMainScreenEvent extends StartMainScreenEvent {
     TResult Function(StartMainScreenEvent value)? start,
     TResult Function(PushMainScreenEvent value)? push,
     TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
     required TResult orElse(),
   }) {
     if (start != null) {
@@ -257,6 +281,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     required TResult Function() start,
     required TResult Function(String? data) push,
     required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
   }) {
     return push(data);
   }
@@ -267,6 +293,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     TResult? Function()? start,
     TResult? Function(String? data)? push,
     TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
   }) {
     return push?.call(data);
   }
@@ -277,6 +305,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     TResult Function()? start,
     TResult Function(String? data)? push,
     TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
     required TResult orElse(),
   }) {
     if (push != null) {
@@ -291,6 +321,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     required TResult Function(StartMainScreenEvent value) start,
     required TResult Function(PushMainScreenEvent value) push,
     required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
   }) {
     return push(this);
   }
@@ -301,6 +333,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     TResult? Function(StartMainScreenEvent value)? start,
     TResult? Function(PushMainScreenEvent value)? push,
     TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
   }) {
     return push?.call(this);
   }
@@ -311,6 +345,8 @@ class _$PushMainScreenEvent extends PushMainScreenEvent {
     TResult Function(StartMainScreenEvent value)? start,
     TResult Function(PushMainScreenEvent value)? push,
     TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
     required TResult orElse(),
   }) {
     if (push != null) {
@@ -372,6 +408,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     required TResult Function() start,
     required TResult Function(String? data) push,
     required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
   }) {
     return stop();
   }
@@ -382,6 +420,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     TResult? Function()? start,
     TResult? Function(String? data)? push,
     TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
   }) {
     return stop?.call();
   }
@@ -392,6 +432,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     TResult Function()? start,
     TResult Function(String? data)? push,
     TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
     required TResult orElse(),
   }) {
     if (stop != null) {
@@ -406,6 +448,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     required TResult Function(StartMainScreenEvent value) start,
     required TResult Function(PushMainScreenEvent value) push,
     required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
   }) {
     return stop(this);
   }
@@ -416,6 +460,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     TResult? Function(StartMainScreenEvent value)? start,
     TResult? Function(PushMainScreenEvent value)? push,
     TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
   }) {
     return stop?.call(this);
   }
@@ -426,6 +472,8 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
     TResult Function(StartMainScreenEvent value)? start,
     TResult Function(PushMainScreenEvent value)? push,
     TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
     required TResult orElse(),
   }) {
     if (stop != null) {
@@ -438,6 +486,312 @@ class _$StopMainScreenEvent extends StopMainScreenEvent {
 abstract class StopMainScreenEvent extends MainScreenEvent {
   const factory StopMainScreenEvent() = _$StopMainScreenEvent;
   const StopMainScreenEvent._() : super._();
+}
+
+/// @nodoc
+abstract class _$$ReceiveMainScreenEventCopyWith<$Res> {
+  factory _$$ReceiveMainScreenEventCopyWith(_$ReceiveMainScreenEvent value,
+          $Res Function(_$ReceiveMainScreenEvent) then) =
+      __$$ReceiveMainScreenEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({String? data});
+}
+
+/// @nodoc
+class __$$ReceiveMainScreenEventCopyWithImpl<$Res>
+    extends _$MainScreenEventCopyWithImpl<$Res, _$ReceiveMainScreenEvent>
+    implements _$$ReceiveMainScreenEventCopyWith<$Res> {
+  __$$ReceiveMainScreenEventCopyWithImpl(_$ReceiveMainScreenEvent _value,
+      $Res Function(_$ReceiveMainScreenEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? data = freezed,
+  }) {
+    return _then(_$ReceiveMainScreenEvent(
+      data: freezed == data
+          ? _value.data
+          : data // ignore: cast_nullable_to_non_nullable
+              as String?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ReceiveMainScreenEvent extends ReceiveMainScreenEvent {
+  const _$ReceiveMainScreenEvent({required this.data}) : super._();
+
+  @override
+  final String? data;
+
+  @override
+  String toString() {
+    return 'MainScreenEvent.receive(data: $data)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ReceiveMainScreenEvent &&
+            (identical(other.data, data) || other.data == data));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, data);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ReceiveMainScreenEventCopyWith<_$ReceiveMainScreenEvent> get copyWith =>
+      __$$ReceiveMainScreenEventCopyWithImpl<_$ReceiveMainScreenEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(String? data) push,
+    required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
+  }) {
+    return receive(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(String? data)? push,
+    TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
+  }) {
+    return receive?.call(data);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(String? data)? push,
+    TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
+    required TResult orElse(),
+  }) {
+    if (receive != null) {
+      return receive(data);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartMainScreenEvent value) start,
+    required TResult Function(PushMainScreenEvent value) push,
+    required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
+  }) {
+    return receive(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartMainScreenEvent value)? start,
+    TResult? Function(PushMainScreenEvent value)? push,
+    TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
+  }) {
+    return receive?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartMainScreenEvent value)? start,
+    TResult Function(PushMainScreenEvent value)? push,
+    TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
+    required TResult orElse(),
+  }) {
+    if (receive != null) {
+      return receive(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReceiveMainScreenEvent extends MainScreenEvent {
+  const factory ReceiveMainScreenEvent({required final String? data}) =
+      _$ReceiveMainScreenEvent;
+  const ReceiveMainScreenEvent._() : super._();
+
+  String? get data;
+  @JsonKey(ignore: true)
+  _$$ReceiveMainScreenEventCopyWith<_$ReceiveMainScreenEvent> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$ErrorMainScreenEventCopyWith<$Res> {
+  factory _$$ErrorMainScreenEventCopyWith(_$ErrorMainScreenEvent value,
+          $Res Function(_$ErrorMainScreenEvent) then) =
+      __$$ErrorMainScreenEventCopyWithImpl<$Res>;
+  @useResult
+  $Res call({Object? error});
+}
+
+/// @nodoc
+class __$$ErrorMainScreenEventCopyWithImpl<$Res>
+    extends _$MainScreenEventCopyWithImpl<$Res, _$ErrorMainScreenEvent>
+    implements _$$ErrorMainScreenEventCopyWith<$Res> {
+  __$$ErrorMainScreenEventCopyWithImpl(_$ErrorMainScreenEvent _value,
+      $Res Function(_$ErrorMainScreenEvent) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? error = freezed,
+  }) {
+    return _then(_$ErrorMainScreenEvent(
+      freezed == error ? _value.error : error,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$ErrorMainScreenEvent extends ErrorMainScreenEvent {
+  const _$ErrorMainScreenEvent(this.error) : super._();
+
+  @override
+  final Object? error;
+
+  @override
+  String toString() {
+    return 'MainScreenEvent.error(error: $error)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$ErrorMainScreenEvent &&
+            const DeepCollectionEquality().equals(other.error, error));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(error));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$ErrorMainScreenEventCopyWith<_$ErrorMainScreenEvent> get copyWith =>
+      __$$ErrorMainScreenEventCopyWithImpl<_$ErrorMainScreenEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() start,
+    required TResult Function(String? data) push,
+    required TResult Function() stop,
+    required TResult Function(String? data) receive,
+    required TResult Function(Object? error) error,
+  }) {
+    return error(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? start,
+    TResult? Function(String? data)? push,
+    TResult? Function()? stop,
+    TResult? Function(String? data)? receive,
+    TResult? Function(Object? error)? error,
+  }) {
+    return error?.call(this.error);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? start,
+    TResult Function(String? data)? push,
+    TResult Function()? stop,
+    TResult Function(String? data)? receive,
+    TResult Function(Object? error)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(StartMainScreenEvent value) start,
+    required TResult Function(PushMainScreenEvent value) push,
+    required TResult Function(StopMainScreenEvent value) stop,
+    required TResult Function(ReceiveMainScreenEvent value) receive,
+    required TResult Function(ErrorMainScreenEvent value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(StartMainScreenEvent value)? start,
+    TResult? Function(PushMainScreenEvent value)? push,
+    TResult? Function(StopMainScreenEvent value)? stop,
+    TResult? Function(ReceiveMainScreenEvent value)? receive,
+    TResult? Function(ErrorMainScreenEvent value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(StartMainScreenEvent value)? start,
+    TResult Function(PushMainScreenEvent value)? push,
+    TResult Function(StopMainScreenEvent value)? stop,
+    TResult Function(ReceiveMainScreenEvent value)? receive,
+    TResult Function(ErrorMainScreenEvent value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ErrorMainScreenEvent extends MainScreenEvent {
+  const factory ErrorMainScreenEvent(final Object? error) =
+      _$ErrorMainScreenEvent;
+  const ErrorMainScreenEvent._() : super._();
+
+  Object? get error;
+  @JsonKey(ignore: true)
+  _$$ErrorMainScreenEventCopyWith<_$ErrorMainScreenEvent> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
